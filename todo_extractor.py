@@ -1,7 +1,6 @@
-"""
-Extracts TODO: notes from source code.
+""" Extracts TODO: notes from source code."""
 
-"""
+__version__ = '0.1'
 
 import argparse
 import json

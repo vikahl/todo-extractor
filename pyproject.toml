@@ -1,2 +1,13 @@
 [tool.black]
 line-length = 110
+
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "todo_extractor"
+author = "Viktor Ahlqvist"
+author-email = "flit@site.rxbc.se"
+home-page = "https://github.com/vikahl/todo-extractor"
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
