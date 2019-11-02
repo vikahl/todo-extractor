@@ -3,16 +3,17 @@ Extracts TODO: notes from source code.
 
 """
 
-import subprocess
 import argparse
-import re
 import json
+import re
+import subprocess
+import typing
 
 
 TODO_REGEXP = "^.*TODO:.*"
 
 
-def grep_cmd(search_string):
+def grep_cmd(search_string: str) -> typing.List[str]:
     """Returns the command to run the selected grep program including flags.
 
     Prioritizes ripgrep (rg) and returns grep if rg is not installed.
@@ -26,7 +27,7 @@ def grep_cmd(search_string):
     return cmd
 
 
-def search_folder(folder):
+def search_folder(folder: str) -> typing.List[typing.Dict[str, str]]:
     """Search folder for TODO notes and return the commands."""
 
     r = subprocess.run(
@@ -38,7 +39,7 @@ def search_folder(folder):
     ]
 
 
-def main(folder):
+def main(folder: str) -> str:
     """Searches in folder and returns JSON"""
     return json.dumps(search_folder(folder), indent=2)
 
