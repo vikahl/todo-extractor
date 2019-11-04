@@ -1,3 +1,4 @@
+"""Main functions for the todo-extractor script."""
 import json
 import re
 import subprocess
