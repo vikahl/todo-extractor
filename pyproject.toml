@@ -34,3 +34,35 @@ test = ["pytest",
 
 [tool.flit.scripts]
 todo_extractor = "todo_extractor:main"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist =
+    black,
+    lint,
+    py36,
+    py37,
+    py38
+isolated_build = True
+
+[testenv]
+deps =
+  pytest
+  pytest-cov
+  pytest-mock
+changedir = {toxinidir}/tests
+commands =
+  python3 -m pytest --cov={envsitepackagesdir}/todo_extractor
+
+[testenv:black]
+basepython = python3.6
+deps = black
+commands = black . --diff --check -l 120
+
+[testenv:lint]
+basepython = python3.6
+deps = pylint
+commands = pylint --rcfile={toxinidir}/pylintrc {envsitepackagesdir}/todo_extractor
+
+"""

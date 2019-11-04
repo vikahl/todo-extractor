@@ -1,6 +1,6 @@
 import pytest
 
-import todo_extractor
+from todo_extractor import todo_extractor
 
 
 class MockedSubprocessReturn:
