@@ -1,8 +1,3 @@
-""" Extracts TODO: notes from source code."""
-
-__version__ = '0.1'
-
-import argparse
 import json
 import re
 import subprocess
@@ -38,14 +33,18 @@ def search_folder(folder: str) -> typing.List[typing.Dict[str, str]]:
     ]
 
 
-def main(folder: str) -> str:
+def serialize_result(search_result: list) -> str:
+    """Serializes a list to JSON and return the string.
+
+    If the list cannot be serialized, an empty list will be returned.
+    """
+    try:
+        return json.dumps(search_result, indent=2)
+    except TypeError:
+        # List contains non-serializable objects
+        return []
+
+
+def search_todos(folder: str) -> str:
     """Searches in folder and returns JSON"""
-    return json.dumps(search_folder(folder), indent=2)
-
-
-if __name__ == "__main__":
-    args_parser = argparse.ArgumentParser()
-    args_parser.add_argument("folder", help="Folder to look for TODO notes")
-    args = args_parser.parse_args()
-
-    print(main(args.folder))
+    return serialize_result(search_folder(folder))
