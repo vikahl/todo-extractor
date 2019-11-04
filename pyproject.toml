@@ -41,6 +41,7 @@ legacy_tox_ini = """
 envlist =
     black,
     lint,
+    types,
     py36,
     py37,
     py38
@@ -52,8 +53,7 @@ deps =
   pytest-cov
   pytest-mock
 changedir = {toxinidir}/tests
-commands =
-  python3 -m pytest --cov={envsitepackagesdir}/todo_extractor
+commands = python3 -m pytest --cov={envsitepackagesdir}/todo_extractor
 
 [testenv:black]
 basepython = python3.6
@@ -65,4 +65,8 @@ basepython = python3.6
 deps = pylint
 commands = pylint --rcfile={toxinidir}/pylintrc {envsitepackagesdir}/todo_extractor
 
+[testenv:types]
+basepython = python3.6
+deps = mypy
+commands = python3 -m mypy {toxinidir}/todo_extractor
 """

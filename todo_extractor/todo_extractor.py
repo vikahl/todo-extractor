@@ -43,7 +43,7 @@ def serialize_result(search_result: list) -> str:
         return json.dumps(search_result, indent=2)
     except TypeError:
         # List contains non-serializable objects
-        return []
+        return "[]"
 
 
 def search_todos(folder: str) -> str:
