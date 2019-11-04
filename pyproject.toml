@@ -21,3 +21,9 @@ classifiers = [
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
 ]
+
+[tool.flit.metadata.requires-extra]
+test = ["pytest", "pytest-cov", "pytest-mock", "tox", "black", "pylint", "mypy"]
+
+[tool.flit.scripts]
+todo_extractor = "todo_extractor:main"
