@@ -29,7 +29,8 @@ test = ["pytest",
         "tox",
         "black",
         "pylint",
-        "mypy"
+        "mypy",
+        "pre-commit"
 ]
 
 [tool.flit.scripts]
