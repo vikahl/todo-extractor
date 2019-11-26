@@ -2,7 +2,7 @@
 
 Extracts TODO comments from code.
 
-The purpose of this project is to serve as an example of going from a script to a full-fledged project and to be used with the presentation _Modern Python development_ at Omegapoints conference OpKoKo 19.2.
+The purpose of this project is to serve as an example of going from a script to a full-fledged project and to be used with the presentation [Modern Python development](https://github.com/vikahl/modern-python-development) at [Omegapoints conference OpKoKo 19.2](https://opkoko.omegapoint.se).
 
 It might be turned into something useful, but currently it's main purpose is to give examples to the presentation.
 
