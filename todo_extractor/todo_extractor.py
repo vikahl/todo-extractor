@@ -4,7 +4,6 @@ import re
 import subprocess
 import typing
 
-
 TODO_REGEXP = "^.*TODO:.*"
 
 
