@@ -66,6 +66,7 @@ commands = python3 -m pytest --cov={envsitepackagesdir}/todo_extractor
 [testenv:black]
 basepython = python3.6
 deps = black
+changedir = {toxinidir}
 commands = black . --diff --check
 
 [testenv:lint]
