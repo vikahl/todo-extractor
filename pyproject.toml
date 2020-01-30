@@ -18,6 +18,9 @@ classifiers = [
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
 ]
+requires = [
+  "Click"
+]
 
 [tool.flit.metadata.requires-extra]
 test = ["pytest",
@@ -44,6 +47,7 @@ envlist =
     black,
     lint,
     types,
+    bandit,
     py36,
     py37,
     py38
@@ -51,7 +55,7 @@ isolated_build = True
 
 [gh-actions]
 python =
-    3.6: py36, isort, black, lint, types
+    3.6: py36, isort, black, lint, types, bandit
     3.7: py37
     3.8: py38
 
@@ -83,6 +87,11 @@ commands = python3 -m mypy {toxinidir}/todo_extractor
 basepython = python3.6
 deps = isort[pyproject]
 commands = isort -rc {toxinidir}/todo_extractor
+
+[testenv:bandit]
+basepython = python3.6
+deps = bandit
+commands = bandit -r {toxinidir}/todo_extractor
 """
 
 [tool.black]
