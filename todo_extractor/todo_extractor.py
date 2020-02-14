@@ -8,7 +8,7 @@ TODO_REGEXP = "^.*TODO:.*"
 
 
 def grep_cmd(search_string: str) -> typing.List[str]:
-    """Returns the command to run the selected grep program including flags.
+    """Returns the command to run the selected grep program including flags
 
     Prioritizes ripgrep (rg) and returns grep if rg is not installed.
     """
@@ -22,7 +22,7 @@ def grep_cmd(search_string: str) -> typing.List[str]:
 
 
 def search_folder(folder: str) -> typing.List[typing.Dict[str, str]]:
-    """Search folder for TODO notes and return the commands."""
+    """Search folder for TODO notes and return the commands"""
 
     r = subprocess.run(
         grep_cmd(TODO_REGEXP), cwd=folder, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
@@ -34,7 +34,7 @@ def search_folder(folder: str) -> typing.List[typing.Dict[str, str]]:
 
 
 def serialize_result(search_result: list) -> str:
-    """Serializes a list to JSON and return the string.
+    """Serializes a list to JSON and return the string
 
     If the list cannot be serialized, an empty list will be returned.
     """
