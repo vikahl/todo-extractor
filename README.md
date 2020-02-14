@@ -1,5 +1,7 @@
 # todo-extractor
 
+![Publish to PyPi](https://github.com/vikahl/todo-extractor/workflows/Publish%20to%20PyPi/badge.svg?branch=master&event=release)
+
 Extracts TODO comments from code.
 
 The purpose of this project is to serve as an example of going from a script to a full-fledged project and to be used with the presentation [Modern Python development](https://github.com/vikahl/modern-python-development) at [Omegapoints conference OpKoKo 19.2](https://opkoko.omegapoint.se).
